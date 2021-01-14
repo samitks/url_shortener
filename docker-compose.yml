@@ -1,0 +1,15 @@
+version: "3.0"
+services:
+  backend:
+    build: .
+    image: my-url-shortener
+    container_name: app
+    ports:
+      - "1234:1234"
+    depends_on:
+      - db
+    links:
+      - db
+  db:
+    image: mongo
+    container_name: db

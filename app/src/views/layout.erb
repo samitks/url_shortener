@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <title>URL Shortner</title>
+  </head>
+  <body>
+    <div id='main'>
+      <p>Welcome, Get your URL shortened here!</p>
+      <form method='post'>
+        <input type='text' name='input_url' id='input_url' placeholder='Enter the URL here' required>
+        <button type='submit' id='submit'>Short it!!</button>
+      </form>
+      <p>
+      <% if @error %>
+        <label>Error :: </label> <font color=red> <%= @error %> </font>
+      <% elsif @short_url %>
+        <div id='inner-div'>
+          </br>
+          <label> Original URL: </label> <strong> <%=  @input_url %> </strong> </br></br>
+          <label> Shortened URL: </label> <font color='green'><strong> <%= @short_url %></strong></font>
+        </div> 
+      <%end%>
+      </p>
+    </div>
+  </body>
+</html>
